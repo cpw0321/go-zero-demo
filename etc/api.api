@@ -1,0 +1,6 @@
+syntax = "v1"
+
+import (
+	"src/infos.api"
+)
+

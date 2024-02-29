@@ -1,0 +1,24 @@
+syntax = "v1"
+
+import (
+    "basic.api"
+)
+
+type (
+    ListInfosReq {
+        PageNum    int      `form:"pageNum,optional"`
+        PageSize   int      `form:"pageSize,optional"`
+        Sort       string   `form:"sort,optional"`      // asc，desc
+        Field      string   `form:"field,optional"`
+    }
+)
+
+@server(
+    group: infos
+)
+
+service api {
+    @doc "get infos list"
+    @handler listInfos
+    get /api/v1/infos/list (ListInfosReq) returns (ListBasicRes);
+}

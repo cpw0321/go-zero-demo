@@ -1,0 +1,18 @@
+syntax = "v1"
+
+type (
+    BasicRes {
+        RetCode    int64     `json:"retCode"`
+        RetMsg     string    `json:"retMsg"`
+        Data       interface{} `json:"data"`
+    }
+
+    ListBasicRes {
+        RetCode    int64         `json:"retCode"`
+        RetMsg     string        `json:"retMsg"`
+        Data       interface{}   `json:"data"`
+        Total      int64         `json:"total"`
+        PageNum    int64         `json:"pageNum"`
+        PageSize   int64         `json:"pageSize"`
+    }
+)
